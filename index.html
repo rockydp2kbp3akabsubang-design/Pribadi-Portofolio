@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Muhammad Rocky Al-Akbar</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Kustomisasi CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #1e40af;
+            --secondary: #475569;
+            --accent: #3b82f6;
+            --light: #f1f5f9;
+            --dark: #0f172a;
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--secondary) !important;
+            margin: 0 8px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        section {
+            padding: 90px 0;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            transform: translateX(-50%);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .profile-img {
+            width: 260px;
+            height: 260px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.2);
+        }
+        
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.25);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .timeline-item {
+            border-left: 3px solid var(--accent);
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 35px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 6px;
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+        }
+        
+        .social-icon {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin: 0 6px;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .bg-light-section {
+            background-color: var(--light);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+    <!-- ============= NAVBAR ============= -->
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fs-5" href="#home">Muhammad Rocky Al-Akbar</a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang Saya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Keahlian</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Pendidikan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Pengalaman Kerja</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Proyek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============= BERANDA ============= -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center text-center text-lg-start">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <img src="assets/img/profile.jpeg" 
+                         alt="Foto Profil" class="profile-img rounded-circle img-fluid">
+                </div>
+                <div class="col-lg-7">
+                    <h4 class="text-secondary mb-2">👋 Halo, Saya.</h4>
+                    <h1 class="display-4 fw-bold mb-3" style="color: var(--primary);">Muhammad Rocky Al-Akbar</h1>
+                    <h4 class="mb-4">Mahasiswa Kelas Karyawan & Pekerja Kantoran</h4>
+                    <p class="lead text-secondary mb-5 mx-auto mx-lg-0" style="max-width: 580px;">
+                        Disiplin, bertanggung jawab, dan selalu berusaha memberikan hasil terbaik. 
+                        Menyeimbangkan pendidikan dan pekerjaan dengan semangat yang tak pernah padam.
+                    </p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#contact" class="btn btn-primary-custom text-white">Hubungi Saya</a>
+                        <a href="#about" class="btn btn-outline-primary">Lihat Profil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= TENTANG SAYA / CV ============= -->
+    <section id="about" class="bg-white">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Tentang Saya</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="card p-4 p-lg-5">
+                        <h5 class="fw-semibold mb-4" style="color: var(--primary);">📋 Data Pribadi</h5>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <p><strong>Nama Lengkap :</strong> Muhammad Rocky Al-Akbar</p>
+                                <p><strong>Tempat, Tgl. Lahir :</strong> Subang, 28-01-2006</p>
+                                <p><strong>Jenis Kelamin :</strong> Laki-laki</p>
+                                <p><strong>Alamat :</strong> Jl.Otista ,Gg.Kitri Rt 49/Rw 013, Subang.Jawa Barat</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <p><strong>No. HP/WA :</strong> 0838-0957-7343</p>
+                                <p><strong>Email :</strong> muhammadmrokyalakbar@gmail.com</p>
+                                <p><strong>Status :</strong> Mahasiswa & Pekerja</p>
+                                <p><strong>Domisili :</strong> Kota Subang</p>
+                            </div>
+                        </div>
+                        
+                        <hr class="mb-4">
+                        
+                        <h5 class="fw-semibold mb-3" style="color: var(--primary);">📝 Profil Singkat</h5>
+                        <p class="text-secondary">
+                            Saya adalah seorang mahasiswa kelas karyawan yang disiplin, bertanggung jawab, dan mampu mengelola waktu dengan sangat baik untuk menyeimbangkan pekerjaan dan pendidikan. Memiliki etos kerja yang kuat, cepat beradaptasi, dan selalu berusaha memberikan hasil terbaik di setiap tugas yang diemban. Saya memiliki kemampuan komunikasi yang baik, bekerja secara teliti, serta mampu bekerja mandiri maupun dalam tim. Saya berkomitmen untuk terus berkembang, meningkatkan kompetensi, dan menyelesaikan studi sambil berkontribusi positif di lingkungan kerja.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= KEAHLIAN ============= -->
+    <section id="skills" class="bg-light-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Keahlian</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <h5 class="fw-semibold mb-4">💼 Keahlian Kantor & Administrasi</h5>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Pengelolaan Dokumen & Arsip</span>
+                            <span class="text-primary fw-medium">90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Penyusunan Laporan</span>
+                            <span class="text-primary fw-medium">85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Komunikasi Kantor</span>
+                            <span class="text-primary fw-medium">88%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Penjadwalan & Manajemen Waktu</span>
+                            <span class="text-primary fw-medium">95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-5">
+                    <h5 class="fw-semibold mb-4">🖥️ Komputer & Teknis</h5>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Microsoft Office (Word, Excel, PPT)</span>
+                            <span class="text-primary fw-medium">85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Google Workspace</span>
+                            <span class="text-primary fw-medium">80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Pengolahan Data Dasar</span>
+                            <span class="text-primary fw-medium">75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Penggunaan Sistem Aplikasi Kantor</span>
+                            <span class="text-primary fw-medium">92%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 mt-4">
+                    <h5 class="fw-semibold mb-3">🤝 Karakter & Kemampuan Diri</h5>
+                    <div class="row g-3">
+                        <div class="col-sm-6 col-md-4">
+                            <span class="badge bg-light text-dark border p-2 w-100">✅ Manajemen Waktu</span>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <span class="badge bg-light text-dark border p-2 w-100">✅ Kedisiplinan Tinggi</span>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <span class="badge bg-light text-dark border p-2 w-100">✅ Kerjasama Tim</span>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <span class="badge bg-light text-dark border p-2 w-100">✅ Komunikasi Efektif</span>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <span class="badge bg-light text-dark border p-2 w-100">✅ Cepat Belajar</span>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <span class="badge bg-light text-dark border p-2 w-100">✅ Teliti & Rapi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= RIWAYAT PENDIDIKAN ============= -->
+    <section id="education" class="bg-white">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Riwayat Pendidikan</h2>
+            </div>
+            
+            <div class="col-lg-8 offset-lg-2">
+                <div class="timeline-item">
+                    <h5 class="fw-semibold" style="color: var(--primary);">[2024] — Sekarang</h5>
+                    <h6 class="fs-6">🎓 [Universitas Mandiri], Subang</h6>
+                    <p class="text-secondary mb-0">Sedang menempuh pendidikan D4/S1 — Jurusan <strong>[Teknik Komputer & Jaringan]</strong><br>Status: Mahasiswa Kelas Karyawan</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h5 class="fw-semibold" style="color: var(--primary);">[2020] — [2023]</h5>
+                    <h6 class="fs-6">📚 [SMAN 3 ], Subang</h6>
+                    <p class="text-secondary mb-0">Lulus — Jurusan <strong>[Ilmu Pengetahuan Sosial ]</strong></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h5 class="fw-semibold" style="color: var(--primary);">[2017] — [2020]</h5>
+                    <h6 class="fs-6">🏫 [SMPN 6 ], Subang</h6>
+                    <p class="text-secondary mb-0">Lulus</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h5 class="fw-semibold" style="color: var(--primary);">[2012] — [2017]</h5>
+                    <h6 class="fs-6">🏫 [SDN Harumanis], Subang</h6>
+                    <p class="text-secondary mb-0">Lulus</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= PENGALAMAN KERJA ============= -->
+    <section id="work" class="bg-light-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Pengalaman Kerja</h2>
+            </div>
+            
+            <div class="col-lg-8 offset-lg-2">
+                <div class="timeline-item">
+                    <h5 class="fw-semibold" style="color: var(--primary);">[Desember , Tahun 2023 ] — Sekarang</h5>
+                    <h6 class="fs-6">💼 [DINAS PENGENDALIAN PENDUDUK KELUARGA BERENCANA PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK], Subang</h6>
+                    <p class="text-primary fw-medium mb-2">Posisi: [Staff Operator Keuangan dan Data]</p>
+                    <ul class="text-secondary mb-0">
+                        <li>Mengelola administrasi harian dan dokumen kantor</li>
+                        <li>Menyusun laporan dan data kerja secara rutin</li>
+                        <li>Mengoperasikan sistem informasi untuk pengelolaan data kantor</li>
+                        <li>Mendukung operasional kantor agar berjalan lancar</li>
+                        <li>Berkoordinasi dengan tim dan pihak terkait</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h5 class="fw-semibold" style="color: var(--primary);">[Mei,Tahun 2023] — [Desember,Tahun 2023]</h5>
+                    <h6 class="fs-6">💼 [PT J&T EXPRESS]</h6>
+                    <p class="text-primary fw-medium mb-2">Posisi: [Sales,Kurir Paket]</p>
+                    <ul class="text-secondary mb-0">
+                        <li>[Bertanggung jawab mengantarkan barang]</li>
+                        <li>[Contoh: Membawa dan mengantarkan pesanan pembeli]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= PROYEK & APLIKASI ============= -->
+    <section id="projects" class="bg-white">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Proyek & Portofolio</h2>
+                <p class="text-secondary mb-5">Berikut adalah pengalaman saya dalam menggunakan sistem informasi serta bidang yang sedang saya pelajari</p>
+            </div>
+            
+            <!-- Aplikasi yang Dikuasai di Kantor -->
+            <h5 class="fw-semibold mb-4 text-center" style="color: var(--primary);">📂 Aplikasi Pengelolaan Data di Tempat Kerja</h5>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100 text-center">
+                        <i class="bi bi-window-desktop text-primary" style="font-size: 48px;"></i>
+                        <h5 class="mt-3 mb-2">SIPD</h5>
+                        <p class="text-secondary small">Sistem Informasi Pemerintahan Daerah<br>Pengelolaan data administrasi dan pelaporan pemerintahan daerah secara terintegrasi.</p>
+                        <span class="badge bg-primary-custom text-white mt-2">Dikuasai</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100 text-center">
+                        <i class="bi bi-cash-coin text-primary" style="font-size: 48px;"></i>
+                        <h5 class="mt-3 mb-2">CORETAX</h5>
+                        <p class="text-secondary small">Sistem Informasi Perpajakan<br>Pengelolaan data dan transaksi perpajakan secara terintegrasi dan akurat.</p>
+                        <span class="badge bg-primary-custom text-white mt-2">Dikuasai</span>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100 text-center">
+                        <i class="bi bi-people-fill text-primary" style="font-size: 48px;"></i>
+                        <h5 class="mt-3 mb-2">Sistem Keluarga Berencana</h5>
+                        <p class="text-secondary small">Sistem Informasi Keluarga Berencana<br>Pencatatan, pengelolaan, dan pelaporan data program keluarga berencana secara terorganisir.</p>
+                        <span class="badge bg-primary-custom text-white mt-2">Dikuasai</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bidang yang Sedang Dipelajari -->
+            <h5 class="fw-semibold mb-4 text-center" style="color: var(--primary);">📚 Bidang yang Sedang Dipelajari</h5>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-code-slash text-primary" style="font-size: 32px;"></i>
+                            <h5 class="ms-3 mb-0">Pemrograman Web</h5>
+                        </div>
+                        <p class="text-secondary small">Mempelajari HTML, CSS, Bootstrap, dan dasar JavaScript untuk membangun tampilan website yang responsif dan menarik.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-bar-chart-fill text-primary" style="font-size: 32px;"></i>
+                            <h5 class="ms-3 mb-0">Pengolahan Data</h5>
+                        </div>
+                        <p class="text-secondary small">Mempelajari teknik pengelolaan, analisis, dan penyajian data menggunakan Microsoft Excel dan alat pendukung lainnya.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-palette-fill text-primary" style="font-size: 32px;"></i>
+                            <h5 class="ms-3 mb-0">Desain Grafis</h5>
+                        </div>
+                        <p class="text-secondary small">Mempelajari dasar desain menggunakan Canva dan Figma untuk membuat presentasi, laporan, dan dokumentasi yang menarik.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-database-fill text-primary" style="font-size: 32px;"></i>
+                            <h5 class="ms-3 mb-0">Sistem Informasi</h5>
+                        </div>
+                        <p class="text-secondary small">Mempelajari alur kerja sistem, manajemen data, dan bagaimana sistem informasi mendukung kinerja organisasi.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-laptop-fill text-primary" style="font-size: 32px;"></i>
+                            <h5 class="ms-3 mb-0">Komputer & Produktivitas</h5>
+                        </div>
+                        <p class="text-secondary small">Meningkatkan penguasaan aplikasi perkantoran, manajemen dokumen digital, dan keamanan data.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-lightbulb-fill text-primary" style="font-size: 32px;"></i>
+                            <h5 class="ms-3 mb-0">Komunikasi Profesional</h5>
+                        </div>
+                        <p class="text-secondary small">Mempelajari cara menyusun laporan, komunikasi kantor yang efektif, dan layanan prima.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= KONTAK SAYA ============= -->
+    <section id="contact" class="bg-light-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Hubungi Saya</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center mb-5">
+                    <p class="lead fs-5">
+                        💬 <strong>Saya terbuka untuk bertukar ide, belajar bersama, dan kolaborasi.</strong>
+                    </p>
+                    <p class="text-secondary">
+                        Jika ada hal yang ingin didiskusikan — baik seputar pekerjaan, studi, maupun ide proyek bersama — jangan ragu untuk menghubungi saya. Mari tumbuh dan berkembang bersama! 😊
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 text-center h-100">
+                        <i class="bi bi-telephone-fill text-primary" style="font-size: 36px;"></i>
+                        <h5 class="mt-3 mb-2">Telepon / WhatsApp</h5>
+                        <p class="text-secondary">[0838-0957-7343]</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 text-center h-100">
+                        <i class="bi bi-envelope-fill text-primary" style="font-size: 36px;"></i>
+                        <h5 class="mt-3 mb-2">Email</h5>
+                        <p class="text-secondary">[muhammadmrokyalakbar@gmail]</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card p-4 text-center h-100">
+                        <i class="bi bi-geo-alt-fill text-primary" style="font-size: 36px;"></i>
+                        <h5 class="mt-3 mb-2">Alamat</h5>
+                        <p class="text-secondary">[Jl.Otista Gg.Kitri RT 49/RW 13, Subang]</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- ============= FOOTER ============= -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2026 <strong>Muhammad Rocky Al-Akbar</strong>.Dibuat dengan Teliti dan Mandiri.</p>
+            <p class="small text-secondary mb-0">Dibuat November 2026</p>
+        </div>
+    </footer>
+
